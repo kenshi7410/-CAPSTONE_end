@@ -37,7 +37,6 @@ const Header = () => {
           <Button>
             <MenuOutlined />
             Danh mục khóa học
-            kenshi
           </Button>
         </Dropdown>
         <Search
