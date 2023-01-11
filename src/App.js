@@ -6,8 +6,8 @@ import Home from "./features/Booking/Home";
 function App() {
   return (
     <BrowserRouter>
+      <Header />
       <Routes>
-        <Header />
         <Route exact path="/" element={<Home />} />
       </Routes>
     </BrowserRouter>
