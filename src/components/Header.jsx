@@ -3,6 +3,8 @@ import { Button, Dropdown, Input, Space } from "antd";
 import { MenuOutlined } from "@ant-design/icons";
 import React from "react";
 import logo from "./../assets/cyberlogo.png";
+import { Link, NavLink } from "react-router-dom";
+import { useSelector } from "react-redux";
 
 const items = [
   {
@@ -25,12 +27,13 @@ const items = [
 const { Search } = Input;
 const onSearch = (value) => console.log(value);
 const Header = () => {
+  const profile = useSelector((state) => state.user.profile);
   return (
     <div className="flex justify-between content-center items-center py-4 bg-slate-500">
       <div>
-        <a href="#" className="no-underline mx-5 ">
+        <Link to="/" className="no-underline mx-5 ">
           <img src={logo} alt="logo" className="w-64 h-20" />
-        </a>
+        </Link>
       </div>
       <div>
         <Dropdown menu={{ items }} trigger={["click"]}>
@@ -48,8 +51,34 @@ const Header = () => {
         />
       </div>
       <div>
-        <Button>Đăng kí</Button>
-        <Button>Đăng nhập</Button>
+      
+        {profile ? (
+          <span className="text-white text-xl">Xin chào, {profile.hoTen}</span>
+        ) : (
+          <nav>
+            <NavLink
+              to="/login"
+              className={(param) => {
+                if (param.isActive)
+                  return "text-yellow-200 text-lg no-underline";
+                return "text-white text-lg no-underline";
+              }}
+            >
+              Đăng Nhập
+            </NavLink>
+            <span className="text-white text-xl">|</span>
+            <NavLink
+              to="/signup"
+              className={(param) => {
+                if (param.isActive)
+                  return "text-yellow-200 text-lg no-underline";
+                return "text-white text-lg no-underline";
+              }}
+            >
+              Đăng Ký
+            </NavLink>
+          </nav>
+        )}
       </div>
     </div>
   );
