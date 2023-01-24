@@ -3,7 +3,7 @@ import actions from "./type";
 const { default: produce } = require("immer");
 
 const inititalState = {
-  User: null,
+  User: {},
 };
 const reducer = (state = inititalState, action) => {
   return produce(state, (draft) => {
