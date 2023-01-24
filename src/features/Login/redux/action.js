@@ -11,27 +11,41 @@ export const signUpAction = (dataUser) => {
         data: dataUser,
       });
     } catch (err) {
-      throw(err)
+      throw err;
     }
   };
 };
 export const loginAction = (userLogin) => {
-      return async (next) => {
-        try {
-          const res = await requester({
-            method: "POST",
-            url: apiPath.LOGIN,
-            data: userLogin,
-          });
-          
-           next({
-            type: actionLogin.SET_PROFILE,
-             payload: res.data,
-          });
-          localStorage.setItem("accessToken", res.data.accessToken);
-          
-        } catch (err) {
-          throw err;
-        }
-      };
-    };
+  return async (next) => {
+    try {
+      const res = await requester({
+        method: "POST",
+        url: apiPath.LOGIN,
+        data: userLogin,
+      });
+
+      next({
+        type: actionLogin.SET_PROFILE,
+        payload: res.data,
+      });
+      localStorage.setItem("accessToken", res.data.accessToken);
+    } catch (err) {
+      throw err;
+    }
+  };
+};
+export const fetchProfileAction = async (next) => {
+  try {
+    const res = await requester({
+      method: "POST",
+      url: apiPath.USER_INFOR,
+    });
+
+    next({
+      type: actionLogin.SET_PROFILE,
+      payload: res.data,
+    });
+  } catch (err) {
+    console.log(err);
+  }
+};

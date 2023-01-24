@@ -53,9 +53,9 @@ const Header = () => {
       <div>
       
         {profile ? (
-          <span className="text-white text-xl">Xin chào, {profile.hoTen}</span>
+          <span className="text-white text-xl mr-10">Xin chào, {profile.hoTen}</span>
         ) : (
-          <nav>
+          <nav className="mr-10">
             <NavLink
               to="/login"
               className={(param) => {
