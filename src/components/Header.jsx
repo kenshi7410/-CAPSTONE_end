@@ -1,4 +1,4 @@
-import { Button, Dropdown, Input, Space } from "antd";
+import { Button, Dropdown, Input } from "antd";
 
 import { MenuOutlined } from "@ant-design/icons";
 import React from "react";
@@ -32,7 +32,11 @@ const Header = () => {
     <div className="flex justify-between content-center items-center py-4 bg-slate-500">
       <div>
         <Link to="/" className="no-underline mx-5 ">
-          <img src={logo} alt="logo" className="w-64 h-20" />
+          <img
+            src={logo}
+            alt="logo"
+            className="sm:w-32 sm:h-10   lg:w-64 lg:h-20"
+          />
         </Link>
       </div>
       <div>
@@ -43,6 +47,7 @@ const Header = () => {
           </Button>
         </Dropdown>
         <Search
+          className="sm:hidden xl:inline-block "
           placeholder="input search text"
           onSearch={onSearch}
           style={{
@@ -51,13 +56,14 @@ const Header = () => {
         />
       </div>
       <div>
-      
         {profile ? (
-          <span className="text-white text-xl mr-10">Xin chào, {profile.hoTen}</span>
+          <span className="text-white text-xl mr-10">
+            Xin chào, {profile.hoTen}
+          </span>
         ) : (
           <nav className="mr-10">
             <NavLink
-              to="/login"
+              to="/dangnhap"
               className={(param) => {
                 if (param.isActive)
                   return "text-yellow-200 text-lg no-underline";
@@ -68,7 +74,7 @@ const Header = () => {
             </NavLink>
             <span className="text-white text-xl">|</span>
             <NavLink
-              to="/signup"
+              to="/dangki"
               className={(param) => {
                 if (param.isActive)
                   return "text-yellow-200 text-lg no-underline";

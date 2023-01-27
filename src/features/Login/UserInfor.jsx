@@ -5,6 +5,7 @@ import { useSelector } from "react-redux";
 
 
 const UserInfor = () => {
+  const colClass=" sm:text-lg  lg:text-2xl my-2"
   const profile = useSelector((state) => state.user.profile); 
   console.log(profile)
   const items = [
@@ -13,12 +14,12 @@ const UserInfor = () => {
       label: `THÔNG TIN CÁ NHÂN`,
       children: (
         <div>
-          <Row justify="space-around">
-            <Col className="text-xl my-2" span={10}>Email : {profile?.email}</Col>
-            <Col className="text-xl my-2" span={10}>Tài khoản : {profile?.taiKhoan}</Col>
-            <Col className="text-xl my-2" span={10}>Họ tên : {profile?.hoTen}</Col>
-            <Col className="text-xl my-2" span={10}>Mật khẩu : {profile?.matKhau}</Col>
-            <Col className="text-xl my-2" span={10}>Số điện thoại : {profile?.soDT}</Col>
+          <Row justify="space-around" className="text-">
+            <Col className={colClass} span={10}>Email : {profile?.email}</Col>
+            <Col className={colClass} span={10}>Tài khoản : {profile?.taiKhoan}</Col>
+            <Col className={colClass} span={10}>Họ tên : {profile?.hoTen}</Col>
+            <Col className={colClass} span={10}>Mật khẩu : {profile?.matKhau}</Col>
+            <Col className={colClass} span={10}>Số điện thoại : {profile?.soDT}</Col>
             <Col className="my-2" span={10}><Button type="primary">Cập nhật</Button></Col>
           </Row>
         </div>
@@ -32,7 +33,7 @@ const UserInfor = () => {
   ];
 
   return (profile &&
-    <div className="w-3/6 mx-auto">
+    <div className="sm:w-11/12 xl:w-4/6 mx-auto">
       <Tabs defaultActiveKey="1" items={items}  />
     </div>
   );

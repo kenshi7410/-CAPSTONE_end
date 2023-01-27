@@ -7,6 +7,8 @@ import {
   UserOutlined,
 } from "@ant-design/icons/lib/icons";
 import { Link } from "react-router-dom";
+import { useDispatch } from "react-redux";
+import { fetchUserListAction } from "../redux/action";
 function getItem(label, key, icon, children, type) {
   return {
     key,
@@ -18,13 +20,20 @@ function getItem(label, key, icon, children, type) {
 }
 const items = [
   getItem(<Link to="/admin">Quản lí khóa học</Link>, "sub1", <UserOutlined />),
-  getItem(<Link to="/admin/quanlinguoidung">Quản lí người dùng</Link>, "sub2", <FileOutlined />),
+  getItem(
+    <Link to="/admin/quanlinguoidung">Quản lí người dùng</Link>,
+    "sub2",
+    <FileOutlined />
+  ),
   getItem(<Link to="/">Trang chủ</Link>, "sub3", <DesktopOutlined />),
 ];
 const Nav = () => {
-  const onClick = (e) => {
-    console.log("click ", e);
+  const onClick = (value) => {
+    if (value.key === "sub2") {
+      dispatch(fetchUserListAction());
+    }
   };
+  const dispatch = useDispatch();
   return (
     <Menu
       className="h-100"

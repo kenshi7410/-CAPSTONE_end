@@ -14,10 +14,166 @@ export const fetchUserListAction = (page = 1) => {
           pageSize: 10,
         },
       });
-      console.log(res.data)
+      //console.log(res.data);
       next({
         type: actions.SET_ADMIN_USER,
         payload: res.data,
+      });
+    } catch (err) {
+      console.log(err);
+    }
+  };
+};
+export const deleteUserAction = (value) => {
+  return async () => {
+    try {
+      await requester({
+        method: "DELETE",
+        url: apiPath.USER_DELETE,
+        params: {
+          TaiKhoan: value,
+        },
+      });
+    } catch (err) {
+      console.log(err);
+      throw err.response.data
+    }
+  };
+};
+export const postUserAction = (item) => {
+  return async () => {
+    try {
+      await requester({
+        method: "POST",
+        url: apiPath.USER_POST,
+        data: item,
+      });
+    } catch (err) {
+      console.log(err.response.data);
+    }
+  };
+};
+export const putUserAction = (item) => {
+  return async () => {
+    try {
+      await requester({
+        method: "PUT",
+        url: apiPath.USER_PUT,
+        data: item,
+      });
+    } catch (err) {
+      console.log(err.response);
+    }
+  };
+};
+export const searchUserAction = (item) => {
+  return async (next) => {
+    try {
+      const res = await requester({
+        method: "GET",
+        url: apiPath.USER_SEARCH,
+        params: {
+          MaNhom: "GP01",
+          tuKhoa: item,
+        },
+      });
+      const items = {
+        items: res.data,
+      };
+      next({
+        type: actions.SET_ADMIN_USER,
+        payload: items,
+      });
+    } catch (err) {
+      console.log(err);
+    }
+  };
+};
+export const fetchUnregisteredCourseAction = (value) => {
+  return async (next) => {
+    try {
+      const res = await requester({
+        method: "POST",
+        url: apiPath.COURSE_UNREGISTER,
+        data: value,
+      });
+
+      next({
+        type: actions.SET_ADMIN_COURSE,
+        payload: res.data,
+      });
+    } catch (err) {
+      console.log(err);
+    }
+  };
+};
+export const postregisteredCourseAction = (value) => {
+  return async (next) => {
+    try {
+      await requester({
+        method: "POST",
+        url: apiPath.COURSE_REGISTER,
+        data: value,
+      });
+    } catch (err) {
+      console.log(err);
+    }
+  };
+};
+export const fetchWaitingCourseAction = (value) => {
+  return async (next) => {
+    try {
+      const res = await requester({
+        method: "POST",
+        url: apiPath.COURSE_WAITING,
+        data: value,
+      });
+      next({
+        type: actions.SET_ADMIN_WAITING_COURSE,
+        payload: res.data,
+      });
+    } catch (err) {
+      console.log(err);
+    }
+  };
+};
+export const fetchApprovedCourseAction = (value) => {
+  return async (next) => {
+    try {
+      const res = await requester({
+        method: "POST",
+        url: apiPath.COURSE_APPROVED,
+        data: value,
+      });
+      next({
+        type: actions.SET_ADMIN_APPROVED_COURSE,
+        payload: res.data,
+      });
+    } catch (err) {
+      console.log(err);
+    }
+  };
+};
+export const postAcceptCourseAction = (value) => {
+  return async (next) => {
+    try {
+      await requester({
+        method: "POST",
+        url: apiPath.COURSE_ACCEPT,
+        data: value,
+      });
+    } catch (err) {
+      console.log(err);
+    }
+  };
+};
+export const postCancelCourseAction = (value) => {
+  return async (next) => {
+    try {
+      await requester({
+        method: "POST",
+        url: apiPath.COURSE_CANCEL,
+        data: value,
       });
     } catch (err) {
       console.log(err);

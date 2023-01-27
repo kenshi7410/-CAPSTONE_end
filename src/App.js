@@ -1,3 +1,4 @@
+import AddUser from "features/Admin/AddUser";
 import Admin from "features/Admin/Admin";
 import User from "features/Admin/User";
 import { fetchProfileAction } from "features/Login/redux/action";
@@ -27,6 +28,7 @@ function App() {
         <Route path="/thongtintaikhoan" element={<UserInfor />} />
         <Route path="/admin" element={<Admin />} />
         <Route path="/admin/quanlinguoidung" element={<User />} />
+        <Route path="/admin/quanlinguoidung/addUser" element={<AddUser />} />
       </Routes>
     </BrowserRouter>
   );
