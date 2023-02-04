@@ -1,6 +1,8 @@
 import AddUser from "features/Admin/AddUser";
 import Admin from "features/Admin/Admin";
 import User from "features/Admin/User";
+import CourseList from "features/Booking/CourseList";
+import Detail from "features/Booking/Detail";
 import { fetchProfileAction } from "features/Login/redux/action";
 import UserInfor from "features/Login/UserInfor";
 import { useEffect } from "react";
@@ -23,6 +25,8 @@ function App() {
       <Header />
       <Routes>
         <Route exact path="/" element={<Home />} />
+        <Route path="/courselist/:maDanhMuc&:MaNhom=GP01" element={<CourseList/>} />
+        <Route path="/detail/:maKhoaHoc" element={<Detail/>}/>
         <Route path="/dangnhap" element={<Login />} />
         <Route path="/dangki" element={<SignUp />} />
         <Route path="/thongtintaikhoan" element={<UserInfor />} />

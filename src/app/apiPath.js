@@ -13,6 +13,9 @@ const apiPath = {
   COURSE_APPROVED: "/api/QuanLyNguoiDung/LayDanhSachKhoaHocDaXetDuyet",
   COURSE_CANCEL: "/api/QuanLyKhoaHoc/HuyGhiDanh",
   COURSE_ACCEPT: "/api/QuanLyKhoaHoc/GhiDanhKhoaHoc",
+  COURSE_LIST:"/api/QuanLyKhoaHoc/LayKhoaHocTheoDanhMuc",
+  COURSE_CATEGORY:"/api/QuanLyKhoaHoc/LayDanhMucKhoaHoc",
+  COURSE_DETAIL:"/api/QuanLyKhoaHoc/LayThongTinKhoaHoc"
 };
 
 export default apiPath;

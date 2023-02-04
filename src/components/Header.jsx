@@ -1,32 +1,38 @@
-import { Button, Dropdown, Input } from "antd";
-
+import { Button, Dropdown, Input, Space } from "antd";
 import { MenuOutlined } from "@ant-design/icons";
 import React from "react";
 import logo from "./../assets/cyberlogo.png";
 import { Link, NavLink } from "react-router-dom";
-import { useSelector } from "react-redux";
+import { useSelector, useDispatch } from "react-redux";
+import { fetchCategoryAction } from "features/Booking/redux/action";
+import { useEffect } from "react";
 
-const items = [
-  {
-    label: <a href="https://www.antgroup.com">1st menu item</a>,
-    key: "0",
-  },
-  {
-    label: <a href="https://www.aliyun.com">2nd menu item</a>,
-    key: "1",
-  },
-  {
-    type: "divider",
-  },
-  {
-    label: "3rd menu item",
-    key: "3",
-  },
-];
+
+
+
+
+const items = [];
+const handleMenuClick = (e) => {
+  console.log('click', e);
+};
+
+
+
+const menuProps = {
+  items,
+  onClick: handleMenuClick,
+};
 //search thông tin
 const { Search } = Input;
 const onSearch = (value) => console.log(value);
 const Header = () => {
+  const category = useSelector((state) => state.booking.category);
+  // console.log(category);
+  const dispatch = useDispatch();
+  useEffect(() => {
+    dispatch(fetchCategoryAction())
+  }, [])
+
   const profile = useSelector((state) => state.user.profile);
   return (
     <div className="flex justify-between content-center items-center py-4 bg-slate-500">
@@ -39,13 +45,12 @@ const Header = () => {
           />
         </Link>
       </div>
-      <div>
-        <Dropdown menu={{ items }} trigger={["click"]}>
-          <Button>
-            <MenuOutlined />
-            Danh mục khóa học
-          </Button>
-        </Dropdown>
+      <div className="space-x-14">
+        <Space wrap>
+          <Dropdown.Button menu={menuProps} placement="bottom">
+            Dropdown
+          </Dropdown.Button>
+        </Space>
         <Search
           className="sm:hidden xl:inline-block "
           placeholder="input search text"
