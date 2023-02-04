@@ -19,14 +19,13 @@ const validateMessages = {
 
 const AddUser = () => {
   const onFinish = async (value) => {
+    const values = { ...value, maNhom: "GP01" };
     if (!state) {
-      const values = { ...value, maNhom: "GP01" };
       await dispatch(postUserAction(values));
-      navigate("/admin/quanlinguoidung")
+      navigate("/admin/quanlinguoidung");
     } else {
-      const values = { ...value, maNhom: "GP01" };
       dispatch(putUserAction(values));
-      navigate("/admin/quanlinguoidung")
+      navigate("/admin/quanlinguoidung");
     }
   };
   const navigate = useNavigate();

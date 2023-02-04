@@ -165,7 +165,7 @@ const User = () => {
           {userList.items && (
             <Pagination
               className="text-center mb-10"
-              defaultCurrent={userList.currentPage}
+              defaultCurrent={1}
               total={userList.totalCount}
               pageSize={10}
               onChange={(page) => {
