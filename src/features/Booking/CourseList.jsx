@@ -17,7 +17,7 @@ const CourseList = () => {
         <div className="container mx-auto">
             <h1 className='bg-red-400 py-20'>Danh sách Khoá học</h1>
             <Row gutter={30}>
-                {courseList.items?.map((item) => (
+                {courseList?.map((item) => (
                     <Col key={item.maDanhMuc} className="mb-7" xs={24} sm={12} md={8} lg={6}>
                         <Card
                             hoverable

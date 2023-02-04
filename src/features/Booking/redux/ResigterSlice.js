@@ -5,7 +5,7 @@ const inititalState = {
 //   banners: [],
   courseList: [],
   courseDetail: null,
-  category:[],
+  category:null,
 };
 
 const reducer = (state = inititalState, action) => {
@@ -22,6 +22,7 @@ const reducer = (state = inititalState, action) => {
         break;
       case actionsBooking.SET_CATEGORY:
           draft.category = action.payload
+          break;
       default:
         break;
     }

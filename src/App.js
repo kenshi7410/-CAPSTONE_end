@@ -3,6 +3,7 @@ import Admin from "features/Admin/Admin";
 import User from "features/Admin/User";
 import CourseList from "features/Booking/CourseList";
 import Detail from "features/Booking/Detail";
+import { fetchCategoryAction } from "features/Booking/redux/action";
 import { fetchProfileAction } from "features/Login/redux/action";
 import UserInfor from "features/Login/UserInfor";
 import { useEffect } from "react";
@@ -19,6 +20,7 @@ function App() {
   useEffect(() => {
     // dispatch async action fetch profile
     dispatch(fetchProfileAction);
+    dispatch(fetchCategoryAction())
   }, []);
   return (
     <BrowserRouter>

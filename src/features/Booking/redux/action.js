@@ -27,10 +27,10 @@ export const fetchCourseAction = (page = 1) => {
           maNhom: "GP01",
         },
       });
-      console.log(res.data);
+      
       next({
         type: actions.SET_COURSELIST,
-        payload: res.data.content,
+        payload: res.data,
       });
     } catch (err) {}
   };
@@ -49,7 +49,7 @@ export const fetchCourseDetailAction = (id) => {
       //console.log(res.data);
       next({
         type: actions.SET_DETAIL,
-        payload: res.data.content,
+        payload: res.data,
       });
     } catch (err) {}
   };
@@ -61,11 +61,17 @@ export const fetchCategoryAction = ()=>{
       const res = await requester({
         method: "GET",
         url: apiPath.COURSE_CATEGORY,
+        params:{
+          tenDanhMuc:""
+        }
       })
+      
       next({
         type:actions.SET_CATEGORY,
-        payload: res.data.content,
+        payload: res.data,
       });
-    }catch(err){}
+    }catch(err){ 
+      console.log("fetchCategoryAction",err)
+    }
   }
 }

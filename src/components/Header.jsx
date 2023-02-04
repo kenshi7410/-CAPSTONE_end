@@ -1,39 +1,31 @@
 import { Button, Dropdown, Input, Space } from "antd";
-import { MenuOutlined } from "@ant-design/icons";
+import { MenuOutlined, DownOutlined } from "@ant-design/icons";
 import React from "react";
 import logo from "./../assets/cyberlogo.png";
 import { Link, NavLink } from "react-router-dom";
-import { useSelector, useDispatch } from "react-redux";
-import { fetchCategoryAction } from "features/Booking/redux/action";
-import { useEffect } from "react";
+import { useSelector } from "react-redux";
 
+// const handleMenuClick = (e) => {
+//   console.log("click", e);
+// };
 
-
-
-
-const items = [];
-const handleMenuClick = (e) => {
-  console.log('click', e);
-};
-
-
-
-const menuProps = {
-  items,
-  onClick: handleMenuClick,
-};
 //search thông tin
 const { Search } = Input;
 const onSearch = (value) => console.log(value);
 const Header = () => {
   const category = useSelector((state) => state.booking.category);
-  // console.log(category);
-  const dispatch = useDispatch();
-  useEffect(() => {
-    dispatch(fetchCategoryAction())
-  }, [])
-
   const profile = useSelector((state) => state.user.profile);
+  const categoryList = category?.map((item, index) => {
+    return {
+      key: index,
+      label: (
+        <NavLink to={`/courselist/MaDanhMuc=${item.maDanhMuc}&:MaNhom=GP01`}>
+          {item.tenDanhMuc}
+        </NavLink>
+      ),
+    };
+  });
+  const items = categoryList;
   return (
     <div className="flex justify-between content-center items-center py-4 bg-slate-500">
       <div>
@@ -46,11 +38,17 @@ const Header = () => {
         </Link>
       </div>
       <div className="space-x-14">
-        <Space wrap>
-          <Dropdown.Button menu={menuProps} placement="bottom">
-            Dropdown
-          </Dropdown.Button>
-        </Space>
+        <Dropdown
+          menu={{
+            items,
+          }}
+        >
+          <Button>
+            <MenuOutlined />
+            Danh mục khóa học
+          </Button>
+        </Dropdown>
+
         <Search
           className="sm:hidden xl:inline-block "
           placeholder="input search text"
@@ -62,9 +60,12 @@ const Header = () => {
       </div>
       <div>
         {profile ? (
-          <span className="text-white text-xl mr-10">
+          <Link
+            to="/thongtintaikhoan"
+            className="text-white text-xl mr-10 no-underline"
+          >
             Xin chào, {profile.hoTen}
-          </span>
+          </Link>
         ) : (
           <nav className="mr-10">
             <NavLink
