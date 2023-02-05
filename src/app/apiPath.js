@@ -15,7 +15,8 @@ const apiPath = {
   COURSE_ACCEPT: "/api/QuanLyKhoaHoc/GhiDanhKhoaHoc",
   COURSE_LIST:"/api/QuanLyKhoaHoc/LayKhoaHocTheoDanhMuc",
   COURSE_CATEGORY:"/api/QuanLyKhoaHoc/LayDanhMucKhoaHoc",
-  COURSE_DETAIL:"/api/QuanLyKhoaHoc/LayThongTinKhoaHoc"
+  COURSE_DETAIL:"/api/QuanLyKhoaHoc/LayThongTinKhoaHoc",
+  COURSE_CARD:"/api/QuanLyKhoaHoc/LayDanhSachKhoaHoc",
 };
 
 export default apiPath;

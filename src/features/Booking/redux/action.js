@@ -61,9 +61,6 @@ export const fetchCategoryAction = ()=>{
       const res = await requester({
         method: "GET",
         url: apiPath.COURSE_CATEGORY,
-        params:{
-          tenDanhMuc:""
-        }
       })
       
       next({
@@ -73,5 +70,28 @@ export const fetchCategoryAction = ()=>{
     }catch(err){ 
       console.log("fetchCategoryAction",err)
     }
+  }
+}
+
+export const fetchCardAction = ()=>{
+  return async(next)=>{
+    
+    try{
+      const res = await requester({
+        method: "GET",
+        url: apiPath.COURSE_CARD,
+        params:{
+          tenKhoaHoc:"js"
+        }
+      })
+      
+      next({
+        type:actions.SET_CARD,
+        payload: res.data,
+      });
+    }catch(err){
+      console.log("fetchCardAction",err);
+    }
+
   }
 }

@@ -6,6 +6,7 @@ const inititalState = {
   courseList: [],
   courseDetail: null,
   category:null,
+  card:[],
 };
 
 const reducer = (state = inititalState, action) => {
@@ -22,6 +23,9 @@ const reducer = (state = inititalState, action) => {
         break;
       case actionsBooking.SET_CATEGORY:
           draft.category = action.payload
+          break;
+      case actionsBooking.SET_CARD:
+          draft.card = action.payload
           break;
       default:
         break;
