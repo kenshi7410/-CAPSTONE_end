@@ -83,7 +83,7 @@ const Footer = () => {
               fontSize: "1.3rem",
             }}
           >
-            <i></i>:376 Võ Văn Tần - Quận 3
+            <i></i>Trụ sở: 112 Cao Thắng, Quận 3
           </p>
           <p
             style={{
@@ -93,7 +93,7 @@ const Footer = () => {
               fontSize: "1.3rem",
             }}
           >
-            <i></i>:376 Võ Văn Tần - Quận 3
+            <i></i>459 Sư Vạn Hạnh, Quận 10
           </p>
           <p
             style={{
@@ -103,7 +103,7 @@ const Footer = () => {
               fontSize: "1.3rem",
             }}
           >
-            <i></i>:376 Võ Văn Tần - Quận 3
+            <i></i>117 Tân Cảng, Bình Thạnh
           </p>
           <p
             style={{
@@ -113,7 +113,7 @@ const Footer = () => {
               fontSize: "1.3rem",
             }}
           >
-            <i></i>:376 Võ Văn Tần - Quận 3
+            <i></i>110 Đường số 10, Park Hill City Land, Phan Văn Trị, Gò Vấp
           </p>
         </div>
       </div>
@@ -187,21 +187,17 @@ const Footer = () => {
             fontSize: "1.3rem",
           }}
         >
-          Lập trình FRONT END Lập trình ReactJS Lập trình React Angular Lập
-          trình tư duy Lập trình NodeJS Lập trình Backend Lập trình Web Lập
-          trình java Spring - Java Boot Tôi đi code dạo Học SEO Hà Nội ở Vietmoz
-          Học lập trình trực tuyến.
+          Lập trình Frontend Lập trình NodeJS      Lập trình Backend   Lập trình Java Web   Lập trình Java Spring - Java Boot  Phân tích Dữ liệu với Python     Tôi Đi Code Dạo
         </p>
       </div>
       <div
         className="basis-1/4 py-10 px-10 "
         style={{ backgroundColor: "#1e1e2a" }}
       >
-        <img
-          src="https://icdn.dantri.com.vn/thumb_w/660/2021/08/17/okalumnibai-10pham-huy-hoangver-12docx-1629211989482.png"
-          alt="er"
-          style={{width:"30rem"}}
-        />
+        <iframe 
+        src="https://www.facebook.com/v2.12/plugins/page.php?adapt_container_width=true&app_id=&channel=https%3A%2F%2Fstaticxx.facebook.com%2Fx%2Fconnect%2Fxd_arbiter%2F%3Fversion%3D46%23cb%3Df31791b2aa99aac%26domain%3Dcybersoft.edu.vn%26is_canvas%3Dfalse%26origin%3Dhttps%253A%252F%252Fcybersoft.edu.vn%252Fff8ac9013dc014%26relation%3Dparent.parent&container_width=0&height=325&hide_cover=false&hide_cta=false&href=https%3A%2F%2Fwww.facebook.com%2Flophocviet%2F&locale=vi_VN&sdk=joey&show_facepile=false&small_header=false&tabs=timeline&width=340" 
+        frameborder="0"
+        style={{border: "none", visibility: "visible", width: "340px", height: "325px"}}></iframe>
         <p
           style={{
             marginTop: "20px",
@@ -210,11 +206,7 @@ const Footer = () => {
             fontSize: "1.3rem",
           }}
         >
-          fskdafsdfhkh - kdhfaskfhkadsh -fksdjfkjfskdj -fkdjsfajsdkfjfkas
-          -fkdsjfaksfjkfj sd- sdkfjaskfjska fskdafsdfhkh - kdhfaskfhkadsh
-          -fksdjfkjfskdj -fkdjsfajsdkfjfkas -fkdsjfaksfjkfj sd- sdkfjaskfjska
-          fskdafsdfhkh - kdhfaskfhkadsh -fksdjfkjfskdj -fkdjsfajsdkfjfkas
-          -fkdsjfaksfjkfj sd- sdkfjaskfjska
+         Lập trình Frontend Lập trình NodeJS      Lập trình Backend   Lập trình Java Web   Lập trình Java Spring - Java Boot  Phân tích Dữ liệu với Python     Tôi Đi Code Dạo
         </p>
       </div>
     </div>
