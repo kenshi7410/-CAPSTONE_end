@@ -2,9 +2,10 @@ import Footer from "components/Footer";
 import AddUser from "features/Admin/AddUser";
 import Admin from "features/Admin/Admin";
 import User from "features/Admin/User";
+import SearchCourse from "features/Booking/component/SearchCourse";
 import DetailCourseList from "features/Booking/DetailCourseList";
 import DetailofCourse from "features/Booking/DetailofCourse";
-import { fetchCategoryAction, fetchCourseAction } from "features/Booking/redux/action";
+import { fetchCardAction, fetchCategoryAction, fetchCourseAction } from "features/Booking/redux/action";
 import { fetchProfileAction } from "features/Login/redux/action";
 import UserInfor from "features/Login/UserInfor";
 import { useEffect } from "react";
@@ -22,6 +23,7 @@ function App() {
     // dispatch async action fetch profile
     dispatch(fetchProfileAction);
     dispatch(fetchCategoryAction());
+    dispatch(fetchCardAction())
     // dispatch(fetchCourseAction());
   }, []);
   return (
@@ -29,6 +31,7 @@ function App() {
       <Header />
       <Routes>
         <Route exact path="/" element={<Home />} />
+        <Route path="search/:tenKhoaHoc" element={<SearchCourse/>}/>
         <Route path="/courselist/:maDanhMuc&:MaNhom=GP01" element={<DetailCourseList/>} />
         <Route path="/detail/:maKhoaHoc" element={<DetailofCourse/>}/>
         <Route path="/dangnhap" element={<Login />} />

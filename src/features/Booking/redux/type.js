@@ -5,7 +5,8 @@ const actionsBooking = {
     SET_COURSELIST:`${sliceName}/SET_COURSELIST`,
     SET_DETAIL:`${sliceName}/SET_DETAIL`,
     SET_CATEGORY:`${sliceName}/SET_CATEGORY`,
-    SET_CARD:`${sliceName}/SET_CARD`
+    SET_CARD:`${sliceName}/SET_CARD`,
+    SEARCH:`${sliceName}/SEARCH`
 }
 
 export default actionsBooking;

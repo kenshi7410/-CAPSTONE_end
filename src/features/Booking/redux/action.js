@@ -77,7 +77,7 @@ export const fetchCategoryAction = ()=>{
   }
 }
 // fetch card
-export const fetchCardAction = ()=>{
+export const fetchCardAction = (name)=>{
   return async(next)=>{
     
     try{
@@ -85,7 +85,7 @@ export const fetchCardAction = ()=>{
         method: "GET",
         url: apiPath.COURSE_CARD,
         params:{
-          tenKhoaHoc:"js"
+          tenKhoaHoc: "js",
         }
       })
       
@@ -97,5 +97,26 @@ export const fetchCardAction = ()=>{
       console.log("fetchCardAction",err);
     }
 
+  }
+}
+// fetch search
+export const fetchSearchAction = (value) =>{
+  return async(next)=>{
+    try{
+      const res = await requester({
+        method:"GET",
+        url:apiPath.COURSE_CARD,
+        params:{
+          tenKhoaHoc: value
+        }
+      })
+      console.log(res.data.content);
+      next({
+        type:actions.SEARCH,
+        payload: res.data.content
+      })
+    }catch(err){
+      console.log(err);
+    }
   }
 }

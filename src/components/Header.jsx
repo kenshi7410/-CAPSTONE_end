@@ -1,9 +1,10 @@
 import { Button, Dropdown, Input, Space } from "antd";
 import { MenuOutlined, DownOutlined } from "@ant-design/icons";
-import React from "react";
+import React, { useEffect } from "react";
 import logo from "./../assets/cyberlogo.png";
 import { Link, NavLink } from "react-router-dom";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
+import { fetchCardAction, fetchSearchAction } from "features/Booking/redux/action";
 
 // const handleMenuClick = (e) => {
 //   console.log("click", e);
@@ -11,8 +12,21 @@ import { useSelector } from "react-redux";
 
 //search thông tin
 const { Search } = Input;
-const onSearch = (value) => console.log(value);
+// header
 const Header = () => {
+  const onSearch = (value) => {
+    if (value) {
+      dispatch(fetchSearchAction(value));
+    } else {
+      dispatch((fetchCardAction));
+    }
+  };
+  useEffect(() => {
+    // call api ds phim
+    dispatch(fetchCardAction());
+  }, []);
+  const dispatch = useDispatch();
+  
   const category = useSelector((state) => state.booking.category);
   const profile = useSelector((state) => state.user.profile);
   const categoryList = category?.map((item, index) => {
@@ -27,7 +41,7 @@ const Header = () => {
   });
   const items = categoryList;
   return (
-<div className="flex justify-between content-center items-center py-4 bg-slate-500 ">
+    <div className="flex justify-between content-center items-center py-4 bg-slate-500 ">
       <div>
         <Link to="/" className="no-underline mx-5 ">
           <img
@@ -105,7 +119,7 @@ const Header = () => {
           </nav>
         )}
       </div>
-    </div>  );
+    </div>);
 };
 
 export default Header;
