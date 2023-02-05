@@ -1,10 +1,13 @@
-import { Button, Dropdown, Input, Space } from "antd";
-import { MenuOutlined, DownOutlined } from "@ant-design/icons";
+import { Button, Dropdown, Input } from "antd";
+import { MenuOutlined } from "@ant-design/icons";
 import React, { useEffect } from "react";
 import logo from "./../assets/cyberlogo.png";
 import { Link, NavLink } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
-import { fetchCardAction, fetchSearchAction } from "features/Booking/redux/action";
+import {
+  fetchCardAction,
+  fetchSearchAction,
+} from "features/Booking/redux/action";
 
 // const handleMenuClick = (e) => {
 //   console.log("click", e);
@@ -18,7 +21,7 @@ const Header = () => {
     if (value) {
       dispatch(fetchSearchAction(value));
     } else {
-      dispatch((fetchCardAction));
+      dispatch(fetchCardAction);
     }
   };
   useEffect(() => {
@@ -26,7 +29,7 @@ const Header = () => {
     dispatch(fetchCardAction());
   }, []);
   const dispatch = useDispatch();
-  
+
   const category = useSelector((state) => state.booking.category);
   const profile = useSelector((state) => state.user.profile);
   const categoryList = category?.map((item, index) => {
@@ -42,50 +45,35 @@ const Header = () => {
   const items = categoryList;
   return (
     <div className="flex justify-between content-center items-center py-4 bg-slate-500 ">
-      <div>
+      <div >
         <Link to="/" className="no-underline mx-5 ">
           <img
             src={logo}
             alt="logo"
             className="sm:w-32 sm:h-10   lg:w-64 lg:h-20"
-            style={{
-              width: "20rem",
-              height: "5rem",
-            }}
           />
         </Link>
       </div>
-      <div className="space-x-14 max-lg:300 px-2">
+      <div className="flex justify-start mr-60 w-7/12">
         <Dropdown
-          style={{ width: "auto" }}
           menu={{
             items,
           }}
+          className="mx-5 "
         >
-          <Button
-            style={{
-              width: "480px",
-              height: "50px",
-              padding: "0 350px 0px 20px",
-            }}
-          >
+          <Button>
             <MenuOutlined />
             Danh mục khóa học
           </Button>
         </Dropdown>
 
         <Search
-          className="sm:hidden xl:inline-block"
+          className=""
           placeholder="input search text"
           onSearch={onSearch}
-          style={{
-            width: 600,
-            marginTop: "10px",
-            // height:"100px"
-          }}
         />
       </div>
-      <div>
+      <div className="w-2/12">
         {profile ? (
           <Link
             to="/thongtintaikhoan"
@@ -119,7 +107,8 @@ const Header = () => {
           </nav>
         )}
       </div>
-    </div>);
+    </div>
+  );
 };
 
 export default Header;
