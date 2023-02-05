@@ -32,7 +32,9 @@ export const fetchCourseAction = (page = 1) => {
         type: actions.SET_COURSELIST,
         payload: res.data,
       });
-    } catch (err) {}
+    } catch (err) {
+      console.log("fetchCourseAction",err);
+    }
   };
 };
 // fetch course detail
