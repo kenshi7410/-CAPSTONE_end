@@ -67,7 +67,7 @@ const Header = () => {
           style={{
             width: 600,
             marginTop: "10px",
-            height:"10px"
+            // height:"100px"
           }}
         />
       </div>

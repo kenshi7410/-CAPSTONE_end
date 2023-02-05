@@ -3,7 +3,7 @@ import AddUser from "features/Admin/AddUser";
 import Admin from "features/Admin/Admin";
 import User from "features/Admin/User";
 import DetailCourseList from "features/Booking/DetailCourseList";
-// import Detail from "features/Booking/CategoryList";
+import DetailofCourse from "features/Booking/DetailofCourse";
 import { fetchCategoryAction, fetchCourseAction } from "features/Booking/redux/action";
 import { fetchProfileAction } from "features/Login/redux/action";
 import UserInfor from "features/Login/UserInfor";
@@ -15,7 +15,6 @@ import Header from "./components/Header";
 import Home from "./features/Booking/Home";
 import Login from "./features/Login/Login";
 import SignUp from "./features/Login/SignUp";
-// import CategoryList from "features/Booking/CategoryList";
 
 function App() {
   const dispatch = useDispatch();
@@ -31,7 +30,7 @@ function App() {
       <Routes>
         <Route exact path="/" element={<Home />} />
         <Route path="/courselist/:maDanhMuc&:MaNhom=GP01" element={<DetailCourseList/>} />
-        {/* <Route path="/detail/:maKhoaHoc" element={<Detail/>}/> */}
+        <Route path="/detail/:maKhoaHoc" element={<DetailofCourse/>}/>
         <Route path="/dangnhap" element={<Login />} />
         <Route path="/dangki" element={<SignUp />} />
         <Route path="/thongtintaikhoan" element={<UserInfor />} />

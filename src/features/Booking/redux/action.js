@@ -45,7 +45,7 @@ export const fetchCourseDetailAction = (id) => {
         method: "GET",
         url: apiPath.COURSE_DETAIL,
         params: {
-          MaPhim: id,
+          maKhoaHoc: id,
         },
       });
       //console.log(res.data);
@@ -53,10 +53,12 @@ export const fetchCourseDetailAction = (id) => {
         type: actions.SET_DETAIL,
         payload: res.data,
       });
-    } catch (err) {}
+    } catch (err) {
+      console.log("fetchCourseDetailAction",err)
+    }
   };
 };
-
+// fetch category
 export const fetchCategoryAction = ()=>{
   return async(next)=>{
     try{
@@ -74,7 +76,7 @@ export const fetchCategoryAction = ()=>{
     }
   }
 }
-
+// fetch card
 export const fetchCardAction = ()=>{
   return async(next)=>{
     

@@ -3,9 +3,8 @@ import actionsBooking from "./type";
 
 const inititalState = {
   //   banners: [],
-  courseList: [
-  ],
-  courseDetail: null,
+  courseList: [],
+  courseDetail: [],
   category: null,
   card: [],
 };
