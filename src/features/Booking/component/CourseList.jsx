@@ -1,5 +1,5 @@
 import React from 'react'
-import { fetchCourseAction } from './redux/action';
+import { fetchCourseAction } from '../redux/action';
 import { useDispatch, useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
 import { Button, Card, Col, Pagination, Row } from "antd";
@@ -15,16 +15,16 @@ const CourseList = () => {
     },[])
     return (courseList &&
         <div className="container mx-auto">
-            <h1 className='bg-red-400 py-20'>Danh sách Khoá học</h1>
+            <h2 className='py-20 ml-14'>Các khoá học mới nhất</h2>
             <Row gutter={30}>
                 {courseList?.map((item) => (
-                    <Col key={item.maDanhMuc} className="mb-7" xs={24} sm={12} md={8} lg={6}>
+                    <Col key={item.maDanhMuc} className="flex justify-center align-middle" xs={24} sm={12} md={8} lg={6}>
                         <Card
                             hoverable
                             style={{ width: "100%", height: "100%" }}
                             cover={
                                 <img
-                                    className="h-72 object-cover object-left-top"
+                                    className="h-50 object-cover object-left-top"
                                     alt={item.biDanh}
                                     src={item.hinhAnh}
                                 />

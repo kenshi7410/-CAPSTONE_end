@@ -1,7 +1,8 @@
+import Footer from "components/Footer";
 import AddUser from "features/Admin/AddUser";
 import Admin from "features/Admin/Admin";
 import User from "features/Admin/User";
-import CourseList from "features/Booking/CourseList";
+import CourseList from "features/Booking/component/CourseList";
 import Detail from "features/Booking/Detail";
 import { fetchCategoryAction } from "features/Booking/redux/action";
 import { fetchProfileAction } from "features/Login/redux/action";
@@ -36,6 +37,7 @@ function App() {
         <Route path="/admin/quanlinguoidung" element={<User />} />
         <Route path="/admin/quanlinguoidung/addUser" element={<AddUser />} />
       </Routes>
+      <Footer/>
     </BrowserRouter>
   );
 }
