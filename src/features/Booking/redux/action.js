@@ -16,18 +16,18 @@ import actions from "./type";
 //   } catch (err) {}
 // };
 // fetch course list
-export const fetchCourseAction = (page = 1) => {
+export const fetchCourseAction = (item) => {
   return async (next) => {
     try {
       const res = await requester({
         method: "GET",
         url: apiPath.COURSE_LIST,
         params: {
-          maDanhMuc:"TuDuy",
+          maDanhMuc: item,
           maNhom: "GP01",
         },
       });
-      
+      console.log(res);
       next({
         type: actions.SET_COURSELIST,
         payload: res.data,

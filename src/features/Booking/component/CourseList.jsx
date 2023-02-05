@@ -24,7 +24,8 @@ const CourseList = () => {
                             style={{ width: "100%", height: "100%" }}
                             cover={
                                 <img
-                                    className="h-50 object-cover object-left-top"
+                                    className="h-100 object-cover object-left-top"
+                                    style={{height:"10rem",}}
                                     alt={item.biDanh}
                                     src={item.hinhAnh}
                                 />

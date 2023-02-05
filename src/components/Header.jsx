@@ -19,7 +19,7 @@ const Header = () => {
     return {
       key: index,
       label: (
-        <NavLink to={`/courselist/MaDanhMuc=${item.maDanhMuc}&:MaNhom=GP01`}>
+        <NavLink to={`/courselist/${item.maDanhMuc}&:MaNhom=GP01`}>
           {item.tenDanhMuc}
         </NavLink>
       ),
@@ -27,34 +27,47 @@ const Header = () => {
   });
   const items = categoryList;
   return (
-    <div className="flex justify-between content-center items-center py-4 bg-slate-500">
+<div className="flex justify-between content-center items-center py-4 bg-slate-500 ">
       <div>
         <Link to="/" className="no-underline mx-5 ">
           <img
             src={logo}
             alt="logo"
             className="sm:w-32 sm:h-10   lg:w-64 lg:h-20"
+            style={{
+              width: "20rem",
+              height: "5rem",
+            }}
           />
         </Link>
       </div>
-      <div className="space-x-14">
+      <div className="space-x-14 max-lg:300 px-2">
         <Dropdown
+          style={{ width: "auto" }}
           menu={{
             items,
           }}
         >
-          <Button>
+          <Button
+            style={{
+              width: "480px",
+              height: "50px",
+              padding: "0 350px 0px 20px",
+            }}
+          >
             <MenuOutlined />
             Danh mục khóa học
           </Button>
         </Dropdown>
 
         <Search
-          className="sm:hidden xl:inline-block "
+          className="sm:hidden xl:inline-block"
           placeholder="input search text"
           onSearch={onSearch}
           style={{
-            width: 500,
+            width: 600,
+            marginTop: "10px",
+            height:"10px"
           }}
         />
       </div>
@@ -92,8 +105,7 @@ const Header = () => {
           </nav>
         )}
       </div>
-    </div>
-  );
+    </div>  );
 };
 
 export default Header;

@@ -2,19 +2,20 @@ import produce from "immer";
 import actionsBooking from "./type";
 
 const inititalState = {
-//   banners: [],
-  courseList: [],
+  //   banners: [],
+  courseList: [
+  ],
   courseDetail: null,
-  category:null,
-  card:[],
+  category: null,
+  card: [],
 };
 
 const reducer = (state = inititalState, action) => {
   return produce(state, (draft) => {
     switch (action.type) {
-    //   case actions.SET_BANNERS:
-    //     draft.banners = action.payload;
-    //     break;
+      //   case actions.SET_BANNERS:
+      //     draft.banners = action.payload;
+      //     break;
       case actionsBooking.SET_COURSELIST:
         draft.courseList = action.payload;
         break;
@@ -22,11 +23,11 @@ const reducer = (state = inititalState, action) => {
         draft.courseDetail = action.payload;
         break;
       case actionsBooking.SET_CATEGORY:
-          draft.category = action.payload
-          break;
+        draft.category = action.payload
+        break;
       case actionsBooking.SET_CARD:
-          draft.card = action.payload
-          break;
+        draft.card = action.payload
+        break;
       default:
         break;
     }
