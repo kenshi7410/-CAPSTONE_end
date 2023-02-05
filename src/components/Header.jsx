@@ -54,7 +54,7 @@ const Header = () => {
           />
         </Link>
       </div>
-      <div className="flex justify-start mr-60 w-7/12">
+      <div className="flex justify-start sm:mr-60 lg:mr-20 xl:mr-60 sm:w-2/12 lg:w-7/12">
         <Dropdown
           menu={{
             items,
@@ -68,7 +68,7 @@ const Header = () => {
         </Dropdown>
 
         <Search
-          
+           className="sm:hidden lg:table"
           placeholder="input search text"
           onSearch={onSearch}
         />
@@ -77,7 +77,7 @@ const Header = () => {
         {profile ? (
           <Link
             to="/thongtintaikhoan"
-            className="text-white text-xl mr-10 no-underline"
+            className="text-white text-xl no-underline"
           >
             Xin chào, {profile.hoTen}
           </Link>
