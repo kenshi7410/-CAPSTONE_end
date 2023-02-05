@@ -68,7 +68,7 @@ const Header = () => {
         </Dropdown>
 
         <Search
-          className=""
+          
           placeholder="input search text"
           onSearch={onSearch}
         />
