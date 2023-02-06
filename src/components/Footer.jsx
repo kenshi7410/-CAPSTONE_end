@@ -1,6 +1,6 @@
 import React from "react";
 import logo from "./../assets/cyberlogo.png";
-import { Link, NavLink } from "react-router-dom";
+import { Link } from "react-router-dom";
 import { Button, Input } from "antd";
 
 const Footer = () => {
