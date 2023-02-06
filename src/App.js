@@ -41,7 +41,7 @@ function App() {
         <Route path="/admin/quanlinguoidung" element={<User />} />
         <Route path="/admin/quanlinguoidung/addUser" element={<AddUser />} />
       </Routes>
-      {/* <Footer/> */}
+      <Footer/>
     </BrowserRouter>
   );
 }
