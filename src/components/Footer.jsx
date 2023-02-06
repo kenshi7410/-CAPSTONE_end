@@ -8,9 +8,11 @@ const Footer = () => {
     <div className="flex flex-row justify-between bg-slate-700 text-white px-3">
       <div className="flex flex-col justify-between basis-4/12 py-5 px-3 bg-slate-700">
         <div>
-          <Link to="/" className="no-underline mx-5 ">
-            <img src={logo} alt="logo" className="w-290 h-100" />
-          </Link>
+          <div>
+            <Link to="/" className="no-underline mx-5 ">
+              <img src={logo} alt="logo" className="w-5/6" />
+            </Link>
+          </div>
           <p className="text-lg my-1">
             CyberSoft Acedemy - Hệ thống đào tạo lập trình chuyên sâu theo dự án
             thực tế
