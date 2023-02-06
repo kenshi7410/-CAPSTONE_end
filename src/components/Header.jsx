@@ -25,7 +25,7 @@ const Header = () => {
     }
   };
   useEffect(() => {
-    // call api ds phim
+    // call api ds khoá học
     dispatch(fetchCardAction());
   }, []);
   const dispatch = useDispatch();
@@ -68,7 +68,7 @@ const Header = () => {
         </Dropdown>
 
         <Search
-           className="sm:hidden lg:table"
+          className="sm:hidden lg:table"
           placeholder="input search text"
           onSearch={onSearch}
         />

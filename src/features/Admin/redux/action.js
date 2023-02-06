@@ -180,3 +180,77 @@ export const postCancelCourseAction = (value) => {
     }
   };
 };
+// fetch khoá học
+export const fetchSearchAction = (value) =>{
+  return async(next)=>{
+    try{
+      const res = await requester({
+        method:"GET",
+        url:apiPath.COURSE_CARD,
+        params:{
+          maNhom:"GP01",
+          tenKhoaHoc: value
+        }
+      });
+      console.log(res.data);
+      next({
+        type:actions.SEARCH,
+        payload: res.data
+      })
+    }catch(err){
+      console.log(err);
+    }
+  }
+}
+export const fetchCoursePic = (value) => {
+  return async (next) => {
+    try {
+      await requester({
+        url: apiPath.COURSE_PIC,
+        method: "POST",
+        data: value,
+      });
+    } catch (err) {
+      console.log(err.response.data);
+    }
+  };
+};
+export const deleteCourseEditAction = (e) => {
+  return async () => {
+    try {
+      await requester({
+        method: "DELETE",
+        url: apiPath.DELETE_PIC,
+        params: {
+          MaKhoaHoc: e,
+        },
+      });
+    } catch (err) {
+      console.log(err);
+    }
+  };
+};
+export const fetchCourseListAction = (name, page = 1)=>{
+  return async(next)=>{
+    
+    try{
+      const res = await requester({
+        method: "GET",
+        url: apiPath.COURSE_CARD,
+        params:{
+          tenKhoaHoc: name,
+          page: page,
+          pageSize: 10,
+        }
+      })
+      
+      next({
+        type:actions.SET_CARD,
+        payload: res.data,
+      });
+    }catch(err){
+      console.log("fetchCardAction",err);
+    }
+
+  }
+}

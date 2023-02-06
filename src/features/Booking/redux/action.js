@@ -99,7 +99,7 @@ export const fetchCardAction = (name)=>{
 
   }
 }
-// fetch search
+// fetch course
 export const fetchSearchAction = (value) =>{
   return async(next)=>{
     try{
