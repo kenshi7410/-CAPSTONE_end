@@ -18,6 +18,11 @@ const apiPath = {
   COURSE_DETAIL:"/api/QuanLyKhoaHoc/LayThongTinKhoaHoc",
   COURSE_CARD:"/api/QuanLyKhoaHoc/LayDanhSachKhoaHoc",
   USER_ONE_INFOR: "/api/QuanLyNguoiDung/ThongTinTaiKhoan",
+  ADD_COURSE:"/api/QuanLyKhoaHoc/ThemKhoaHoc",
+  EDIT_COURSE:"/api/QuanLyKhoaHoc/CapNhatKhoaHoc",
+  ADMIN_SEARCH:"/api/QuanLyKhoaHoc/LayDanhSachKhoaHoc",
+  COURSE_PIC:"/api/QuanLyKhoaHoc/UploadHinhAnhKhoaHoc",
+  DELETE_PIC:"/api/QuanLyKhoaHoc/XoaKhoaHoc"
 };
 
 export default apiPath;

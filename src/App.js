@@ -1,6 +1,8 @@
 import Footer from "components/Footer";
+import AddCourse from "features/Admin/AddCourse";
 import AddUser from "features/Admin/AddUser";
 import Admin from "features/Admin/Admin";
+import EditCourse from "features/Admin/EditCourse";
 import User from "features/Admin/User";
 import SearchCourse from "features/Booking/component/SearchCourse";
 import DetailCourseList from "features/Booking/DetailCourseList";
@@ -31,15 +33,17 @@ function App() {
       <Header />
       <Routes>
         <Route exact path="/" element={<Home />} />
-        <Route path="search/:tenKhoaHoc" element={<SearchCourse/>}/>
-        <Route path="/courselist/:maDanhMuc&:MaNhom=GP01" element={<DetailCourseList/>} />
-        <Route path="/detail/:maKhoaHoc" element={<DetailofCourse/>}/>
+        <Route path="search/:tenKhoaHoc" element={<SearchCourse />} />
+        <Route path="/courselist/:maDanhMuc&:MaNhom=GP01" element={<DetailCourseList />} />
+        <Route path="/detail/:maKhoaHoc" element={<DetailofCourse />} />
         <Route path="/dangnhap" element={<Login />} />
         <Route path="/dangki" element={<SignUp />} />
         <Route path="/thongtintaikhoan" element={<UserInfor />} />
         <Route path="/admin" element={<Admin />} />
         <Route path="/admin/quanlinguoidung" element={<User />} />
-        <Route path="/admin/quanlinguoidung/addUser" element={<AddUser />} />
+        <Route path="/admin/quanlikhoahoc/addCourse" element={<AddCourse />} />
+        <Route path="/admin/quanlikhochoc/editCourse" element={<EditCourse />} />
+
       </Routes>
       {/* <Footer/> */}
     </BrowserRouter>

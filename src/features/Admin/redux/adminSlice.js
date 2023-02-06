@@ -7,6 +7,8 @@ const inititalState = {
   Course: null,
   WaitingCourse: null,
   ApprovedCourse: null,
+  card: [],
+
 };
 const reducer = (state = inititalState, action) => {
   return produce(state, (draft) => {
@@ -22,6 +24,9 @@ const reducer = (state = inititalState, action) => {
         break;
       case actions.SET_ADMIN_APPROVED_COURSE:
         draft.ApprovedCourse = action.payload;
+        break;
+      case actions.SET_CARD:
+        draft.card =action.payload;
         break;
       default:
         break;
