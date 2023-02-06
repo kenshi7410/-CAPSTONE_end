@@ -133,7 +133,7 @@ const Admin = () => {
               total={courseList.totalCount}
               pageSize={10}
               onChange={(page) => {
-                dispatch(fetchCourseListAction(page));
+                dispatch(fetchCourseListAction("",page));
               }}
             />
           )}
