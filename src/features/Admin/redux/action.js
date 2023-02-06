@@ -236,7 +236,7 @@ export const fetchCourseListAction = (name, page = 1)=>{
     try{
       const res = await requester({
         method: "GET",
-        url: apiPath.COURSE_CARD,
+        url: apiPath.COURSE,
         params:{
           tenKhoaHoc: name,
           page: page,

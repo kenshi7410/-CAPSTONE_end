@@ -5,7 +5,6 @@ import Nav from './components/Nav';
 import { Button, Form, Input, Select, Switch } from "antd";
 import TextArea from "antd/es/input/TextArea";
 import { DatePicker } from "antd";
-import moment from 'moment/moment';
 import { fetchCoursePic } from './redux/action';
 
 
@@ -21,7 +20,7 @@ const AddCourse = () => {
     const onFinish = async (value) => {
         const values = {
             ...value,
-            ngayTao: value["ngayTao"].moment().format("DD-MM-YYYY"),
+            ngayTao: value["ngayTao"].format("DD-MM-YYYY"),
             hinhanh: img,
         };
         console.log("dữ liệu từ form:", values);
