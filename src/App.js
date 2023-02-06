@@ -45,7 +45,7 @@ function App() {
         <Route path="/admin/quanlikhochoc/editCourse" element={<EditCourse />} />
 
       </Routes>
-      {/* <Footer/> */}
+      <Footer/>
     </BrowserRouter>
   );
 }
