@@ -5,7 +5,6 @@ import Nav from './components/Nav';
 import { Button, Form, Input, Select, Switch } from "antd";
 import TextArea from "antd/es/input/TextArea";
 import { DatePicker } from "antd";
-import moment from 'moment/moment';
 import { fetchCoursePic } from './redux/action';
 
 
@@ -21,9 +20,10 @@ const AddCourse = () => {
     const onFinish = async (value) => {
         const values = {
             ...value,
-            ngayTao: value["ngayTao"].moment().format("DD-MM-YYYY"),
+            ngayTao: value["ngayTao"].format("DD-MM-YYYY"),
             hinhanh: img,
         };
+        console.log(value)
         console.log("dữ liệu từ form:", values);
         const {
             maKhoaHoc = "",
@@ -94,7 +94,7 @@ const AddCourse = () => {
                                 style={{
                                     width: 170,
                                 }}
-                                onChange={handleChange}
+                                // onChange={handleChange}
                                 options={[
                                     {
                                         value: 'Design',
@@ -124,7 +124,7 @@ const AddCourse = () => {
                             />
                         </Form.Item>
 
-                        <Form.Item label="Ngày tao :" name="ngayKhoiChieu">
+                        <Form.Item label="Ngày tạo :" name="ngayTao">
                             <DatePicker />
                         </Form.Item>
                         <Form.Item label="Upload :">

@@ -8,7 +8,7 @@ import {
 } from "@ant-design/icons/lib/icons";
 import { Link } from "react-router-dom";
 import { useDispatch } from "react-redux";
-import { fetchUserListAction } from "../redux/action";
+import { fetchCourseListAction, fetchUserListAction } from "../redux/action";
 function getItem(label, key, icon, children, type) {
   return {
     key,
@@ -31,6 +31,8 @@ const Nav = () => {
   const onClick = (value) => {
     if (value.key === "sub2") {
       dispatch(fetchUserListAction());
+    }else if(value.key === "sub1"){
+      dispatch(fetchCourseListAction())
     }
   };
   const dispatch = useDispatch();

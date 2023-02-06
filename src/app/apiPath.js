@@ -21,8 +21,10 @@ const apiPath = {
   ADD_COURSE:"/api/QuanLyKhoaHoc/ThemKhoaHoc",
   EDIT_COURSE:"/api/QuanLyKhoaHoc/CapNhatKhoaHoc",
   ADMIN_SEARCH:"/api/QuanLyKhoaHoc/LayDanhSachKhoaHoc",
-  COURSE_PIC:"/api/QuanLyKhoaHoc/UploadHinhAnhKhoaHoc",
-  DELETE_PIC:"/api/QuanLyKhoaHoc/XoaKhoaHoc"
+  COURSE_PIC:"/api/QuanLyKhoaHoc/ThemKhoaHocUploadHinh",
+  DELETE_PIC:"/api/QuanLyKhoaHoc/XoaKhoaHoc",
+  COURSE:"/api/QuanLyKhoaHoc/LayDanhSachKhoaHoc_PhanTrang"
+
 };
 
 export default apiPath;
