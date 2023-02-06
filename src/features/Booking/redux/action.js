@@ -110,10 +110,10 @@ export const fetchSearchAction = (value) =>{
           tenKhoaHoc: value
         }
       })
-      console.log(res.data.content);
+      console.log(res.data);
       next({
         type:actions.SEARCH,
-        payload: res.data.content
+        payload: res.data
       })
     }catch(err){
       console.log(err);

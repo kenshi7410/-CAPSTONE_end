@@ -49,3 +49,45 @@ export const fetchProfileAction = async (next) => {
     console.log(err);
   }
 };
+export const fetchOneProfileAction = async (next) => {
+  try {
+    const res = await requester({
+      method: "POST",
+      url: apiPath.USER_ONE_INFOR,
+    });
+
+    next({
+      type: actionLogin.SET_ONE_PROFILE,
+      payload: res.data,
+    });
+  } catch (err) {
+    console.log(err);
+  }
+};
+export const cancelAction = (item, user) => {
+  return async (next) => {
+    const items = { maKhoaHoc: item, taiKhoan: user };
+    try {
+      await requester({
+        method: "POST",
+        url: apiPath.COURSE_CANCEL,
+        data:items
+      });
+    } catch (err) {
+      console.log(err);
+    }
+  };
+};
+export const putProfileAction = (item) => {
+  return async (next) => {
+    try {
+      await requester({
+        method: "PUT",
+        url: apiPath.USER_PUT,
+        data: item,
+      });
+    } catch (err) {
+      throw err.response.data;
+    }
+  };
+};

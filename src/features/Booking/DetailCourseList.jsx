@@ -1,26 +1,21 @@
-import React, { useEffect } from 'react'
-import { useDispatch, useSelector } from 'react-redux';
-import { fetchCourseAction } from './redux/action';
-import { Button, Card, Col, Pagination, Row } from "antd";
-import { Link, useParams } from 'react-router-dom';
-
-
+import React, { useEffect } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import { fetchCourseAction } from "./redux/action";
+import { Button, Card, Col,  Row } from "antd";
+import { Link, useParams } from "react-router-dom";
 
 const DetailCourseList = () => {
-
-    const course = useSelector((state) => state.booking.courseList);
-    const dispatch = useDispatch();
-    useEffect(() => {
-        dispatch(fetchCourseAction(item))
-    }, [item])
-    console.log(course);
-    const param = useParams()
-    console.log(param);
-    var item = param.maDanhMuc
+  const course = useSelector((state) => state.booking.courseList);
+  const dispatch = useDispatch();
+  const param = useParams();
+  useEffect(() => {
+    dispatch(fetchCourseAction(param.maDanhMuc));
+  }, [param]);
+  console.log(course);
 
 
-    return (
-<div>
+  return (
+    <div>
       <h2 className="py-20 ml-14">Các khoá học phổ biến</h2>
       <Row gutter={30}>
         {course?.map((item) => (
@@ -75,7 +70,8 @@ const DetailCourseList = () => {
           </Col>
         ))}
       </Row>
-    </div>    )
-}
+    </div>
+  );
+};
 
-export default DetailCourseList
+export default DetailCourseList;

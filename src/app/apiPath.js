@@ -17,6 +17,7 @@ const apiPath = {
   COURSE_CATEGORY:"/api/QuanLyKhoaHoc/LayDanhMucKhoaHoc",
   COURSE_DETAIL:"/api/QuanLyKhoaHoc/LayThongTinKhoaHoc",
   COURSE_CARD:"/api/QuanLyKhoaHoc/LayDanhSachKhoaHoc",
+  USER_ONE_INFOR: "/api/QuanLyNguoiDung/ThongTinTaiKhoan",
 };
 
 export default apiPath;
