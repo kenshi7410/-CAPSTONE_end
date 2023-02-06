@@ -78,3 +78,16 @@ export const cancelAction = (item, user) => {
     }
   };
 };
+export const putProfileAction = (item) => {
+  return async (next) => {
+    try {
+      await requester({
+        method: "PUT",
+        url: apiPath.USER_PUT,
+        data: item,
+      });
+    } catch (err) {
+      throw err.response.data;
+    }
+  };
+};

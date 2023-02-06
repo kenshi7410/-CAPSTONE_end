@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { Button, Col, Form, Input, Modal, Rate, Row, Tabs } from "antd";
 import { useDispatch, useSelector } from "react-redux";
-import { cancelAction, fetchOneProfileAction } from "./redux/action";
+import { cancelAction, fetchOneProfileAction, putProfileAction } from "./redux/action";
 import { useNavigate } from "react-router-dom";
 
 /* eslint-disable no-template-curly-in-string */
@@ -41,6 +41,21 @@ const UserInfor = () => {
   const handleModal = () => {
     setIsModalOpen(true);
     setIsERR("");
+  };
+  const onFinish = async (item) => {
+    const items = {
+      ...item,
+      maNhom: "GP01",
+      maLoaiNguoiDung: oneProfile.maLoaiNguoiDung,
+    };
+    try {
+      await dispatch(putProfileAction(items));
+      handleCancel();
+      dispatch(fetchOneProfileAction);
+    } catch (err) {
+      setIsERR(err);
+    }
+    
   };
   const items = [
     {
@@ -133,7 +148,7 @@ const UserInfor = () => {
         >
           <div>
             <Form
-              //onFinish={onFinish}
+              onFinish={onFinish}
               labelCol={{
                 sm: { span: 10 },
                 lg: { span: 5 },
@@ -197,7 +212,7 @@ const UserInfor = () => {
                 rules={[
                   {
                     required: true,
-                    type:"number"
+                    
                   },
                 ]}
               >
