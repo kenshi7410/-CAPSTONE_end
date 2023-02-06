@@ -14,7 +14,7 @@ const SearchCourse = () => {
   var name = param.tenKhoaHoc
 
   return (
-    <div>SearchCourse</div>
+    <div></div>
   )
 }
 
