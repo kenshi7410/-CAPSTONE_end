@@ -211,7 +211,7 @@ export const fetchCoursePic = (value) => {
         data: value,
       });
     } catch (err) {
-      console.log(err.response.data);
+      console.log(err);
     }
   };
 };
@@ -254,3 +254,19 @@ export const fetchCourseListAction = (name, page = 1)=>{
 
   }
 }
+export const fetchCourseUploadAction = (e) => {
+  return async (next) => {
+    try {
+      await requester({
+        method: "POST",
+        url: apiPath.EDIT_COURSE,
+        data: e,
+      });
+
+      //console.log(res.data);
+    } catch (err) {
+      console.log(err.response.data);
+    }
+  };
+};
+

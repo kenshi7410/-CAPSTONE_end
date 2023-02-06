@@ -12,11 +12,12 @@ const Admin = () => {
   const handleDelete = async (item) => {
     try {
       await
-        (deleteCourseEditAction(item));
+        dispatch(deleteCourseEditAction(item));
     } catch (err) {
       setIsFalse(err)
     }
     dispatch(fetchCourseListAction)
+    console.log(item)
   }
   const handleSearch = async (value) => {
     console.log(value)

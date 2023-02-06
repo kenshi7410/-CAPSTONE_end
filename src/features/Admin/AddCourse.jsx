@@ -23,6 +23,7 @@ const AddCourse = () => {
             ngayTao: value["ngayTao"].format("DD-MM-YYYY"),
             hinhanh: img,
         };
+        console.log(value)
         console.log("dữ liệu từ form:", values);
         const {
             maKhoaHoc = "",
@@ -93,7 +94,7 @@ const AddCourse = () => {
                                 style={{
                                     width: 170,
                                 }}
-                                onChange={handleChange}
+                                // onChange={handleChange}
                                 options={[
                                     {
                                         value: 'Design',
@@ -123,7 +124,7 @@ const AddCourse = () => {
                             />
                         </Form.Item>
 
-                        <Form.Item label="Ngày tao :" name="ngayKhoiChieu">
+                        <Form.Item label="Ngày tạo :" name="ngayTao">
                             <DatePicker />
                         </Form.Item>
                         <Form.Item label="Upload :">
