@@ -62,6 +62,8 @@ const Login = () => {
           </Form.Item>
         </Form>
       </div>
+      <h2>tài khoản admin: 17211quang</h2>
+      <h2>mật khẩu admin: 123</h2>
     </div>
   );
 };

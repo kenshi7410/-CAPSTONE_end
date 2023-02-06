@@ -9,8 +9,8 @@ import { postUserAction, putUserAction } from "./redux/action";
 const validateMessages = {
   required: "${label} chưa nhập",
   types: {
-    email: "${label} is not a valid email!",
-    number: "${label} is not a valid number!",
+    email: "${label} không hợp lệ !",
+    number: "${label} bắt buộc phải là số !",
   },
   number: {
     range: "${label} must be between ${min} and ${max}",
@@ -73,6 +73,7 @@ const AddUser = () => {
               rules={[
                 {
                   type: "email",
+                  required: true,
                 },
               ]}
               initialValue={state?.email}
@@ -86,6 +87,11 @@ const AddUser = () => {
             <Form.Item
               name="soDT"
               label="Số điện thoại"
+              rules={[
+                {
+                  required: true,
+                },
+              ]}
               initialValue={state?.soDT}
             >
               <Input />

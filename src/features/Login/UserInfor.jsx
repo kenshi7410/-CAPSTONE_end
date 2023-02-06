@@ -137,7 +137,7 @@ const UserInfor = () => {
 
   return (
     oneProfile && (
-      <div className="sm:w-11/12 xl:w-4/6 mx-auto">
+      <div className="sm:w-11/12 xl:w-4/6 mx-auto mb-10">
         <Tabs defaultActiveKey="1" items={items} />
 
         <Modal
